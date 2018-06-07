@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
-import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
+// import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 import colors from '../theme/colors';
 import { NavBarHeight, isIOS, isIphoneX } from '../utils/platformSpecific';
 import { images } from '../assets/images';
@@ -146,12 +146,7 @@ const NavBar = ({
       <Text style={styles.titleText}>{title}</Text>
     </View> */}
     <View style={styles.headerContainer}>
-      <GestureRecognizer
-        onSwipeLeft={() => handleSwipeGesture('left')}
-        onSwipeRight={() => handleSwipeGesture('right')}
-        config={config}
-        style={StyleSheet.flatten(styles.gestureViewStyle)}
-      >
+      <View>
         <TouchableOpacity
           activeOpacity={0.4}
           onPress={() => openSportsDropDown()}
@@ -162,17 +157,6 @@ const NavBar = ({
           </View>
         </TouchableOpacity>
         <Image source={images.swipeIcon} style={styles.swipeIcon} resizeMode="contain" />
-      </GestureRecognizer>
-    </View>
-
-    <View style={styles.rightView}>
-      <View style={styles.rightInfoContainer}>
-        <Text style={styles.walletAmountText}>11500</Text>
-        <Image source={images.walletIcon} style={styles.rightInfoIcon} resizeMode="contain" />
-      </View>
-      <View style={styles.rightInfoContainer}>
-        <Text style={styles.walletAmountText}>30</Text>
-        <Image source={images.diamondIcon} style={styles.rightInfoIcon} resizeMode="contain" />
       </View>
     </View>
   </View>

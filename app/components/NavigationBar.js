@@ -28,6 +28,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'flex-start',
     justifyContent: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 60
   },
   titleText: {
     color: colors.appRedColor,
@@ -37,6 +40,7 @@ const styles = StyleSheet.create({
   },
   leftView: {
     flex: 0.18,
+    width: 60,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
@@ -87,23 +91,13 @@ const NavBar = ({
         <TouchableOpacity
           onPress={() => backButtonAction()}
         >
-          <Image style={styles.navImage} source={backButtonImage} />
+          <Text>hello</Text>
         </TouchableOpacity>
         : null }
     </View>
     <View style={styles.headerView}>
       <Text style={styles.titleText}>{title}</Text>
     </View>
-    {!hideRightView && <View style={styles.rightView}>
-      <View style={styles.rightInfoContainer}>
-        <Text style={styles.walletAmountText}>11500</Text>
-        <Image source={images.walletIcon} style={styles.rightInfoIcon} resizeMode="contain" />
-      </View>
-      <View style={styles.rightInfoContainer}>
-        <Text style={styles.walletAmountText}>30</Text>
-        <Image source={images.diamondIcon} style={styles.rightInfoIcon} resizeMode="contain" />
-      </View>
-    </View>}
   </View>
 );
 

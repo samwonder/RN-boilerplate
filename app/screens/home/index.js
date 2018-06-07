@@ -14,16 +14,14 @@ import {
   TouchableOpacity
 } from 'react-native';
 import { NavigationActions } from 'react-navigation';
-import ContainerView from './components/ContainerView';
-import Utils from '../../utils/utils';
 import StatusBar from '../../components/StatusBar';
 const { width, height } = Dimensions.get('window');
 import NavigationBar from '../../components/NavigationBar';
-
 import images from '../../assets/images';
+
 export let navigatorObject = null;
 
-class Splash extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
     navigatorObject = props.navigation;
@@ -33,37 +31,42 @@ class Splash extends Component {
 
   }
   sideMenuAction() {
-    this.props.navigation.navigate('Home');
+    console.log('===============');
+    this.props.navigation.navigate('DrawerOpen');
+  }
+  popBack() {
+    const { goBack } = this.props.navigation;
+    goBack(null);
   }
   render() {
     return (
       <View style={{ flex: 1 }}>
       <NavigationBar
-        title='testing world'
+        title='test'
         showBackButton={Boolean(true)}
         // backButtonImage={images.backbutton}
-        // backButtonAction={() => this.popBack()}
+        backButtonAction={() => this.popBack()}
         // backButtonAction={() => this.sideMenuAction()}
         hideRightView={true}
       />
         <TouchableOpacity
               activeOpacity={0.9}
-              onPress={() => this.sideMenuAction()}
+              onPress={() => this.popBack()}
               style={{ color: 'black', height: 50, width: 60 , backgroundColor: 'red'}}
             >
-         <Text>Click Me</Text>
+         <Text>Back</Text>
          </TouchableOpacity>
       </View>
     );
   }
 }
 
-Splash.propTypes = {
+Home.propTypes = {
   navigation: PropTypes.objectOf(PropTypes.any),
 };
 
-Splash.defaultProps = {
+Home.defaultProps = {
   navigation: {},
 };
 
-export default Splash;
+export default Home;

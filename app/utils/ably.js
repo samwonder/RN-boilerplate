@@ -1,4 +1,4 @@
-import Constant from './constant';
+import Constant from '../config/appConfig';
 
 var Ably = require('ably');
 

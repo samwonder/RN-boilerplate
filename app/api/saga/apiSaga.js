@@ -4,7 +4,7 @@ import { apiCall } from '../apiInterface';
 import { navigatorObject } from '../../screens/Splash';
 import { API_ACTION } from '../actions/apiActions';
 // import { RESET_LOGOUT } from '../../actions/authentication';
-import constant from '../../utils/constant';
+import constant from '../../config/appConfig';
 import { resetRoute } from '../../utils/utils_functions';
 
 function* manageResponseData(action, response) {

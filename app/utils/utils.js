@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import { AsyncStorage, NetInfo } from 'react-native';
 import { showPopupAlert } from './showAlert';
-import constant from './constant';
 
 class Utils extends Component {
   constructor() {
@@ -99,7 +98,6 @@ class Utils extends Component {
         }
         apiStatus = APIStatus.FAILED;
       } else {
-        //showPopupAlert(constant.SERVER_ERROR_MESSAGE);
         if (resetDataInStore !== undefined) {
           resetDataInStore();
         }
